@@ -1,7 +1,16 @@
-<!-- <h2 mat-dialog-title>Zoomed view</h2> -->
-<div md-dialog-content>
-    Zoomed pic placeholder
-    </div>
+<div class="centerContent">
+    <div md-dialog-content>
+        <div (click)="imgChange('left')" class="arrows">
+          <
+          </div>
+        <img style="width: 80%;" src="{{ data.allImages[data.currentImageID].imgString }}"/>
+        <div (click)="imgChange('right')" class="arrows">
+           >
+            </div>
+
+      </div>
+
+</div>
 
 
     <!-- <div mat-dialog-actions>

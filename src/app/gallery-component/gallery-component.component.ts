@@ -18,9 +18,10 @@ export class GalleryComponentComponent implements OnInit {
 
   openDialog(evt): void {
     const selectedImageString = evt.target.src;
-    const selectedImageId = evt.target.id;
+    const selectedImageID = evt.target.id;
       this.dialog.open(ImagePreviewComponent, {
-        data: {errorMsg: 'sdfsdf'} , width : '250px'
+        data: {allImages: this.images, currentImageID: selectedImageID}
+        // , width : '250px'
       });
   }
   onFileSelected(ev) {
@@ -41,7 +42,7 @@ export class GalleryComponentComponent implements OnInit {
     });
   }
   addToGallery() {
-    this.images.unshift({
+    this.images.push({
       id: this.images.length,
       imgString: this.uploadFileBase64
     });

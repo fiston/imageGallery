@@ -1,0 +1,15 @@
+.arrows{
+  display: inline-block;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  width: 31px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.centerContent {
+  text-align: center;
+}
