@@ -19,10 +19,13 @@ export class GalleryComponentComponent implements OnInit {
   openDialog(evt): void {
     const selectedImageString = evt.target.src;
     const selectedImageID = evt.target.id;
-      this.dialog.open(ImagePreviewComponent, {
+    const dialogRef = this.dialog.open(ImagePreviewComponent, {
         data: {allImages: this.images, currentImageID: selectedImageID}
         , width : '80%',
         height: '70%',
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(result);
       });
   }
   onFileSelected(ev) {

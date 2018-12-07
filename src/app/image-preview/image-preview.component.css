@@ -1,12 +1,19 @@
-.arrows{
-  display: inline-block;
+.buttonStyle{
   color: white;
   background-color: red;
   border-radius: 50%;
-  width: 31px;
+  width: 36px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+}
+.deleteButton{
+  position: absolute;
+  right: -14px;
+  top: -14px;
+}
+.arrows{
+  display: inline-block;
   cursor: pointer;
   margin: 3px;
 }
@@ -24,6 +31,7 @@
 }
 .imageContainer {
   display: inline-block;
+  position: relative;
   width: 90%;
   height: 80%;
 }
