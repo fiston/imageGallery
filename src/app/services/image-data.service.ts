@@ -17,3 +17,4 @@ export class ImageDataService {
     // return this._http.get<any>(this.url + '//imageResults' + id);
     return this._http.get<any>(this.prodUrl + `/imageResults/${id}.json`);
   }
+}

@@ -1,7 +1,4 @@
 <div class="galleryContainer">
-      <!-- <button>
-        <img src="../../assets/baseline-add-24px.svg"/>
-      </button> -->
       <div class="upload-btn-wrapper">
           <button class="btn">+</button>
           <input type="file" name="myfile" (change)="onFileSelected($event)" />
@@ -9,7 +6,7 @@
       <div class="masonry">
           <div *ngFor="let imgItem of images" class="item">
 
-            <img src="{{ imgItem.imgString }}"/>
+            <img (click)="openDialog()" src="{{ imgItem.imgString }}"/>
 
         </div>
         </div>
