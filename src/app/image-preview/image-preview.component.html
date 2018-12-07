@@ -1,10 +1,18 @@
 <div class="centerContent">
     <div md-dialog-content>
-        <div (click)="imgChange('left')" class="arrows">
+        <div
+        [ngClass]="{
+          'is-disabled': (data.currentImageID) == 0,
+          'arrows': true
+        }" (click)="imgChange('left')" >
           <
           </div>
         <img style="width: 80%;" src="{{ data.allImages[data.currentImageID].imgString }}"/>
-        <div (click)="imgChange('right')" class="arrows">
+        <div [ngClass]="{
+          'is-disabled': data.currentImageID == data.allImages.length-1,
+          'arrows': true
+        }"
+        (click)="imgChange('right')" class="arrows">
            >
             </div>
 

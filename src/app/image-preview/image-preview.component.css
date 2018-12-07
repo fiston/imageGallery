@@ -9,7 +9,10 @@
   font-weight: bold;
   cursor: pointer;
 }
-
+.is-disabled{
+  background-color: grey;
+  cursor: not-allowed;
+}
 .centerContent {
   text-align: center;
 }
