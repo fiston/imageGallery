@@ -21,7 +21,8 @@ export class GalleryComponentComponent implements OnInit {
     const selectedImageID = evt.target.id;
       this.dialog.open(ImagePreviewComponent, {
         data: {allImages: this.images, currentImageID: selectedImageID}
-        , width : '80%'
+        , width : '80%',
+        height: '70%',
       });
   }
   onFileSelected(ev) {

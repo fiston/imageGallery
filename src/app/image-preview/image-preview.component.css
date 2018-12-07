@@ -19,10 +19,11 @@
   cursor: not-allowed;
 }
 .centerContent {
+  height: 100%;
   text-align: center;
 }
 .imageContainer {
   display: inline-block;
   width: 90%;
-  height: 425px;
+  height: 80%;
 }
