@@ -6,10 +6,10 @@
       <div class="masonry">
           <div *ngFor="let imgItem of images" class="item">
 
-            <img (click)="openDialog()" src="{{ imgItem.imgString }}"/>
+            <img data-id="{{ imgItem.id }}" (click)="openDialog($event)" src="{{ imgItem.imgString }}"/>
 
         </div>
         </div>
 
 </div>
-x
+

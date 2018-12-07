@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { MatDialog } from '@angular/material';
+import {
+  MatDialog,
+  MatDialogConfig
+} from '@angular/material/dialog';
+import { ImagePreviewComponent } from '../image-preview/image-preview.component';
 
 @Component({
   selector: 'app-gallery-component',
@@ -10,22 +14,15 @@ export class GalleryComponentComponent implements OnInit {
   selectedFile = null;
   uploadFileBase64 = null;
   @Input() images;
-  constructor(
-    // public dialog: MatDialog
-    ) {
+  constructor(private dialog: MatDialog) {}
+
+  openDialog(evt): void {
+    const selectedImageString = evt.target.src;
+    const selectedImageId = evt.target.id;
+      this.dialog.open(ImagePreviewComponent, {
+        data: {errorMsg: 'sdfsdf'} , width : '250px'
+      });
   }
-
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-  //     width: '250px',
-  //     data: {name: this.name, animal: this.animal}
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     this.animal = result;
-  //   });
-  // }
   onFileSelected(ev) {
     this.selectedFile = ev.target.files[0];
     this.getBase64(this.selectedFile).then(
