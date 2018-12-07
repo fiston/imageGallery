@@ -1,3 +1,30 @@
+.galleryContainer .upload-btn-wrapper {
+  position: absolute;
+  right: 17.850px;
+}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  width: 38px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -28,6 +55,7 @@ h4{
     -webkit-column-gap: 5px;
     column-gap: 5px;
     font-size: .85em;
+    padding-top: 40px;
 }
 .item {
     display: inline-block;
