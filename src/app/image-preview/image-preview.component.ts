@@ -23,9 +23,10 @@ export class ImagePreviewComponent {
         break;
       }
     }
+    const isLast = index === this.data.allImages.length - 1 ? true : false;
     this.data.allImages.splice(index, 1);
     localStorage.setItem('galleryImages', JSON.stringify(this.data.allImages));
-    this.imgChange('right');
+    isLast ? this.imgChange('left') : this.imgChange('right') ;
   }
   imgChange(ev) {
     if (ev === 'right') {
