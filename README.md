@@ -1,5 +1,22 @@
 # ImageGallery
+App deployed at: https://kunalgallery.firebaseapp.com
+Functionalities implemented are mentioned as follows: 
 
+Image Gallery component to view all image
+Image Preview to see a zoomed view of the image.
+Navigate between images to see other items in the gallery using Preview mode.
+Ability to upload images
+Ability to delete images
+Local storage to reduce network calls
+
+Additionally,
+Image Meta data like date created shown
+Total Count of image shown as header
+Used firebase hosting to deploy the app
+CICD pipeline implemented
+Used firebase realtime database to save images
+Response images
+Used Pinterest Masonry Layout
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 
 ## Development server
