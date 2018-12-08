@@ -10,9 +10,20 @@ export class ImagePreviewComponent {
 
   constructor(private dialogRef: MatDialogRef<ImagePreviewComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
   }
+  imageIndex = this.getIndexfromID(this.data.currentImageID);
   faTrash = faTrash;
   public closeDialog() {
     this.dialogRef.close(this.data.allImages);
+  }
+  getIndexfromID(currentImageID) {
+    let index;
+    for (let i = 0 ; i < this.data.allImages.length; i ++) {
+      if (this.data.allImages[i].id === parseInt(currentImageID, 10) ) {
+        index = i;
+        break;
+      }
+    }
+    return index;
   }
 
   onDelete(currentImageID) {
@@ -30,13 +41,13 @@ export class ImagePreviewComponent {
   }
   imgChange(ev) {
     if (ev === 'right') {
-      if (parseInt(this.data.currentImageID, 10) + 1 <= this.data.allImages.length - 1) {
-        this.data.currentImageID++;
+      if ( this.imageIndex < this.data.allImages.length - 1) {
+        this.imageIndex++;
       }
     }
     if (ev === 'left') {
-      if (parseInt(this.data.currentImageID, 10) - 1 >= 0) {
-        this.data.currentImageID--;
+      if (this.imageIndex > 0) {
+        this.imageIndex--;
       }
     }
   }
