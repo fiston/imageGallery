@@ -1,5 +1,5 @@
 <div class="centerContent">
-    <div style="height:100%" md-dialog-content>
+    <div *ngIf="data.allImages.length > 0" style="height:100%" md-dialog-content >
         <button
         [ngClass]="{
           'is-disabled': (imageIndex) == 0,
@@ -9,7 +9,7 @@
           <
       </button>
         <div class="imageContainer">
-          <button class="buttonStyle deleteButton" (click)="onDelete(data.currentImageID)"><fa-icon [icon]="faTrash"></fa-icon></button>
+          <button class="buttonStyle deleteButton" (click)="onDelete()"><fa-icon [icon]="faTrash"></fa-icon></button>
           <img class="imageStyle" src="{{ data.allImages[imageIndex].imgString }}"/>
         </div>
         <button [ngClass]="{
@@ -22,6 +22,9 @@
             </button>
 
       </div>
+    <div class="noDataMessage"  *ngIf="data.allImages.length === 0">
+      No Images found in the gallery
+    </div>
 
 </div>
 

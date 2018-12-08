@@ -26,16 +26,9 @@ export class ImagePreviewComponent {
     return index;
   }
 
-  onDelete(currentImageID) {
-    let index;
-    for (let i = 0; i < this.data.allImages.length; i++) {
-      if (this.data.allImages[i].id === parseInt(currentImageID, 10)) {
-        index = i;
-        break;
-      }
-    }
-    const isLast = index === this.data.allImages.length - 1 ? true : false;
-    this.data.allImages.splice(index, 1);
+  onDelete() {
+    const isLast = this.imageIndex === this.data.allImages.length - 1 ? true : false;
+    this.data.allImages.splice(this.imageIndex, 1);
     localStorage.setItem('galleryImages', JSON.stringify(this.data.allImages));
     isLast ? this.imgChange('left') : this.imgChange('right') ;
   }

@@ -35,3 +35,8 @@
   width: 90%;
   height: 80%;
 }
+.noDataMessage {
+  top: 40%;
+  position: relative;
+  font-size: 2em;
+}

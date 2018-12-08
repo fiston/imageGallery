@@ -5,6 +5,8 @@ import {
 } from '@angular/material/dialog';
 import { ImagePreviewComponent } from '../image-preview/image-preview.component';
 
+import { ImageDataService } from '../services/image-data.service';
+
 @Component({
   selector: 'app-gallery-component',
   templateUrl: './gallery-component.component.html',
@@ -14,7 +16,8 @@ export class GalleryComponentComponent implements OnInit {
   selectedFile = null;
   uploadFileBase64 = null;
   @Input() images;
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog,
+    private _imageDataService: ImageDataService) {}
 
   openDialog(evt): void {
     const selectedImageString = evt.target.src;
@@ -50,6 +53,7 @@ export class GalleryComponentComponent implements OnInit {
       id: this.images.length,
       imgString: this.uploadFileBase64
     });
+    // this._imageDataService.updateImages(this.images);
     localStorage.setItem('galleryImages', JSON.stringify(this.images));
   }
   onUpload() {
