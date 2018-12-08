@@ -1,5 +1,5 @@
-import {Component, Inject} from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-image-preview',
@@ -16,18 +16,25 @@ export class ImagePreviewComponent {
   }
 
   onDelete(currentImageID) {
-    this.data.allImages.splice(parseInt(currentImageID, 10) - 1, 1);
+    let index;
+    for (let i = 0; i < this.data.allImages.length; i++) {
+      if (this.data.allImages[i].id === parseInt(currentImageID, 10)) {
+        index = i;
+        break;
+      }
+    }
+    this.data.allImages.splice(index, 1);
     this.imgChange('right');
   }
   imgChange(ev) {
     if (ev === 'right') {
-      if (parseInt(this.data.currentImageID, 10) + 1 <= this.data.allImages.length - 1 ) {
-        this.data.currentImageID ++;
+      if (parseInt(this.data.currentImageID, 10) + 1 <= this.data.allImages.length - 1) {
+        this.data.currentImageID++;
       }
     }
     if (ev === 'left') {
       if (parseInt(this.data.currentImageID, 10) - 1 >= 0) {
-        this.data.currentImageID --;
+        this.data.currentImageID--;
       }
     }
   }
