@@ -51,6 +51,7 @@ export class GalleryComponentComponent implements OnInit {
   addToGallery() {
     this.images.push({
       id: this.images.length,
+      timestamp: new Date().getTime(),
       imgString: this.uploadFileBase64
     });
     // this._imageDataService.updateImages(this.images);
