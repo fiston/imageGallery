@@ -50,6 +50,7 @@ export class GalleryComponentComponent implements OnInit {
       id: this.images.length,
       imgString: this.uploadFileBase64
     });
+    localStorage.setItem('galleryImages', JSON.stringify(this.images));
   }
   onUpload() {
     // upload the image binary;
