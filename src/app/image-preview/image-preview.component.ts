@@ -26,6 +26,9 @@ export class ImagePreviewComponent {
     return index;
   }
 
+  getDateString(timestamp) {
+    return ('Created at: ' + new Date(timestamp).toDateString());
+  }
   onDelete() {
     const isLast = this.imageIndex === this.data.allImages.length - 1 ? true : false;
     this.data.allImages.splice(this.imageIndex, 1);

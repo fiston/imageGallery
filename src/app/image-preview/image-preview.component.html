@@ -20,6 +20,7 @@
         (click)="imgChange('right')" class="arrows">
            >
             </button>
+            <div [innerHTML]="getDateString(data.allImages[imageIndex].timestamp)" ></div>
 
       </div>
     <div class="noDataMessage"  *ngIf="data.allImages.length === 0">
