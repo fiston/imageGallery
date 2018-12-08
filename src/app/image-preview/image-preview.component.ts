@@ -24,6 +24,7 @@ export class ImagePreviewComponent {
       }
     }
     this.data.allImages.splice(index, 1);
+    localStorage.setItem('galleryImages', JSON.stringify(this.data.allImages));
     this.imgChange('right');
   }
   imgChange(ev) {
