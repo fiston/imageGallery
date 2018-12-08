@@ -8,6 +8,13 @@
   display: inline-block;
 }
 
+.imageCountStyle {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: absolute;
+  left: 18px;
+}
+
 .btn {
   color: white;
   background-color: red;

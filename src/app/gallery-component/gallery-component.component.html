@@ -1,4 +1,5 @@
 <div class="galleryContainer">
+      <div class="imageCountStyle" [innerHTML]="getTotalImages()"></div>
       <div class="upload-btn-wrapper">
           <button class="btn">+</button>
           <input type="file" name="myfile" (change)="onFileSelected($event)" />

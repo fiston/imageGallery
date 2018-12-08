@@ -48,6 +48,9 @@ export class GalleryComponentComponent implements OnInit {
       reader.onerror = error => reject(error);
     });
   }
+  getTotalImages() {
+    return `All Images (${this.images.length})`
+  }
   addToGallery() {
     this.images.push({
       id: this.images.length,
